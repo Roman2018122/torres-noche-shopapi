@@ -15,6 +15,7 @@ router = DefaultRouter()
 router.register('users', UserViewSet, basename='user')
 router.register('categories', CategoryViewSet, basename='category')
 router.register('products', ProductViewSet, basename='product')
+router.register('orders', OrderViewSet, basename='order')
 
 urlpatterns = [
     path('health/',             health_check),

@@ -14,7 +14,7 @@ class CategoryFilter(django_filters.FilterSet):
 class ProductFilter(django_filters.FilterSet):
     name          = django_filters.CharFilter(lookup_expr='icontains')
     price_min     = django_filters.NumberFilter(field_name='price', lookup_expr='gte')
-    price_max     = django_filters.NumberFilter(field_name='price', lookup_expr='lte')
+    price_max     = django_filters.NumberFilter(field_name='price', lookup_expr='lt')
     stock_min     = django_filters.NumberFilter(field_name='stock', lookup_expr='gte')
     stock_max     = django_filters.NumberFilter(field_name='stock', lookup_expr='lte')
     category_name = django_filters.CharFilter(

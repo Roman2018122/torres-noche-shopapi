@@ -1,10 +1,11 @@
-# store/serializers/category.py
+# store/serializers/category.py — reemplazar CategorySerializer
 from rest_framework import serializers
 from django.utils.text import slugify
 from store.models import Category
 
 
 class CategorySerializer(serializers.ModelSerializer):
+    total_products = serializers.SerializerMethodField()
 
     class Meta:
         model  = Category
@@ -15,7 +16,7 @@ class CategorySerializer(serializers.ModelSerializer):
         read_only_fields = ['id', 'created_at']
 
     def get_total_products(self, obj):
-        return obj.products.filter(is_active=True).count()    
+        return obj.products.filter(is_active=True).count()
 
     def validate_slug(self, value):
         return slugify(value)
