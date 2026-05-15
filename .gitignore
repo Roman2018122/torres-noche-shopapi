@@ -23,6 +23,7 @@ staticfiles/
 # Environment variables
 .env
 .env.*
+!.env.example
 
 # VS Code
 .vscode/
@@ -57,8 +58,6 @@ build/
 dist/
 *.egg-info/
 
-# UV package manager
-uv.lock
 
 # Jupyter
 .ipynb_checkpoints/
